@@ -1,0 +1,40 @@
+def grades(arrayGrade):
+    tot_grd = 0
+    gradeList = len(arrayGrade)
+    for i in range(gradeList):
+        tot_grd += arrayGrade[i]
+    return tot_grd
+
+def studentNme():
+    firstNme = input("Enter your 1st name : \n")
+    secondNme = input("Enter your 2st name : \n")
+
+    return firstNme, secondNme
+
+def myGrades():
+    grades = []
+    print("\t\t\t say what you scored in: \n")
+    english = int(input("english : \n"))
+    mathematics = int(input("mathematics : \n"))
+    science = int(input("science : \n"))
+    kiswahili = int(input("kiswahili : \n"))
+    computer_studies = int(input("computer_studies : \n"))
+    grades.append(english)
+    grades.append(mathematics)
+    grades.append(science)
+    grades.append(kiswahili)
+    grades.append(computer_studies)
+
+    return grades
+
+def students():
+    names = studentNme()
+    student1 = myGrades()
+    student1Grade = grades(student1)
+    print("\n\n")
+    for i in names:
+        print(i,end= "")
+    print(" scored {:d}: ".format(student1Grade))
+
+
+students()
