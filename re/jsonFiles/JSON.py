@@ -39,8 +39,24 @@ with open('countries.json') as f:
     data = json.load(f)
     for objects in data['countries']:
         print(objects['{:s}'.format("country")]+"----president is "+ objects['{:s}'.format("president")])
+    
+for country in data['countries']:
+    del(country["where"], country["president"])
 
-        
+#creating a new json file and dumping the python object thus into a
+#json string
 
+with open('new_countries.json', 'w') as f2:
+    json.dump(data, f2)
+    
+
+
+
+
+
+
+
+
+    
 
 
